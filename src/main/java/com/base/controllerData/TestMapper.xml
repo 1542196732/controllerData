@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="TestMapper">
+
+	<!-- 属性字段 -->
+	<sql id="request">
+		name,
+		type,
+		isOk,
+		doublee
+	</sql>
+	
+	<select id="query" parameterType="pd" resultType="pd">
+		SELECT
+		<include refid="request" />
+		FROM test
+		WHERE name = #{name}
+	</select>
+
+</mapper>
